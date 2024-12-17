@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:37:52 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/05 15:28:06 by root             ###   ########.fr       */
+/*   Updated: 2024/12/17 16:24:42 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "printf/ft_printf.h"
-# include "gnl/get_next_line_bonus.h"
-# include "extras/extras.h"
-# include "./push_swap.h"
+# include "../push_swap.h"
 
 int		ft_atoi(const char *nptr);
 int		ft_isalnum(int c);
@@ -43,7 +41,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 
 void	ft_bzero(void *s, size_t n);

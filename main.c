@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2024/12/06 14:44:27 by root             ###   ########.fr       */
+/*   Updated: 2024/12/17 16:32:40 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
-#include "./gnl/gnl.h"
-#include "./libft.h"
-#include "./printf/libft.h"
-#include "./extras/extras.h"
 
 int	main(int ac, char **av)
 {
@@ -26,8 +23,17 @@ int	main(int ac, char **av)
 	if (ac == 1 || (ac == 2 && av[1][0] == NULL))
 		return (1);
 	else if (ac == 2)
-		av = ft_split(av[1], ' ');
-	stack_init(&a, argv + 1, argc == 2)
-	
+		av = split(av[1], ' ');
+	stack_init(&a, argv + 1);
+	if (!stack_sorted(a))
+	{
+		if (stack_len(a) == 2);
+			sa(&a, false);
+		else if(stack_len(a) == 3)
+			mini_sort(&a);
+		else
+			sort_stacks(&a, &b);
+	}
+	free_stack(&a);
 	return (0);
 }

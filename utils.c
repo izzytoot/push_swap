@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extras.h                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 15:33:00 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/11/29 15:35:19 by icunha-t         ###   ########.fr       */
+/*   Created: 2024/12/17 16:28:38 by icunha-t          #+#    #+#             */
+/*   Updated: 2024/12/17 16:30:35 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXTRAS_H
-# define EXTRAS_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-
-void	*ft_free(void *pointer);
-
-#endif
+t_stack_node	*find_last_node(t_stack_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while(stack->next)
+	{
+		stack = stack->next;
+	}
+	return(stack);
+}
