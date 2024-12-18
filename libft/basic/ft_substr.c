@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:33:27 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/11/22 15:40:00 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:55:14 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	r[j] = '\0';
 	return (r);
 }
-

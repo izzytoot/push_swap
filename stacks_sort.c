@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   stacks_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 10:13:31 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/18 13:53:31 by icunha-t         ###   ########.fr       */
+/*   Created: 2024/12/18 12:19:07 by icunha-t          #+#    #+#             */
+/*   Updated: 2024/12/18 15:03:30 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "push_swap.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_stacks_sort(t_stack_node **a, t_stack_node **b)
 {
-	size_t				i;
-	unsigned char		*temps1;
-	unsigned const char	*temps2;
+	int	len_a;
 
-	i = 0;
-	temps1 = (unsigned char *) s1;
-	temps2 = (unsigned char *) s2;
-	if (i == n)
-		return (0);
-	while (i < n - 1)
+	len_a = ft_stack_len(*a);
+	if (len_a-- > 3 && !ft_is_stack_sorted(*a))
+		pb(b, a, false);
+	if (len_a-- > 3 && !ft_is_stack_sorted(*a))
+		pb(b, a, false);
+	while (len_a-- > 3 && !ft_is_stack_sorted(*a))
 	{
-		if (temps1[i] != temps2[i])
-			return (temps1[i] - temps2[i]);
-		i++;
+		init_nodes_a(*a, *b);
+		move_a_to_b(a, b);
 	}
-	return (temps1[i] - temps2[i]);
+	ft_mini_sort(a);
 }

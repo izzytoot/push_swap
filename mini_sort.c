@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   mini_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 10:13:31 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/18 13:53:31 by icunha-t         ###   ########.fr       */
+/*   Created: 2024/12/18 11:40:36 by icunha-t          #+#    #+#             */
+/*   Updated: 2024/12/18 15:03:44 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "push_swap.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_mini_sort(t_stack_node	**a)
 {
-	size_t				i;
-	unsigned char		*temps1;
-	unsigned const char	*temps2;
+	t_stack_node	*highest_nbr;
 
-	i = 0;
-	temps1 = (unsigned char *) s1;
-	temps2 = (unsigned char *) s2;
-	if (i == n)
-		return (0);
-	while (i < n - 1)
-	{
-		if (temps1[i] != temps2[i])
-			return (temps1[i] - temps2[i]);
-		i++;
-	}
-	return (temps1[i] - temps2[i]);
+	highest_nbr = find_highest_node(*a);
+	if (*a == highest_nbr)
+		ra(a, false);
+	else if ((*a)->next == highest_nbr)
+		rra(a, false);
+	if ((*a)->value > (*a)->next->value)
+		sa(a, false);
 }

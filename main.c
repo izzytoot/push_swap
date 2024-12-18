@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   0.1_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2024/12/17 16:32:40 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:50:05 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
 int	main(int ac, char **av)
 {
-	t_stack_node *a;
-	t_stack_node *b;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
 	a = NULL;
 	b = NULL;
@@ -27,9 +26,9 @@ int	main(int ac, char **av)
 	stack_init(&a, argv + 1);
 	if (!stack_sorted(a))
 	{
-		if (stack_len(a) == 2);
+		if (stack_len(a) == 2)
 			sa(&a, false);
-		else if(stack_len(a) == 3)
+		else if (stack_len(a) == 3)
 			mini_sort(&a);
 		else
 			sort_stacks(&a, &b);
