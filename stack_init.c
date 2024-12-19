@@ -6,13 +6,13 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:52:24 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/18 13:39:25 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:35:09 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(const char *str)
+static long	ft_atol(const char *str)
 {
 	long	r;
 	int		i;

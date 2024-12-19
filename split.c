@@ -6,13 +6,13 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:46:54 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/18 13:49:07 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:34:54 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	count_words(char *str, char c)
+static int	count_words(char *str, char c)
 {
 	int		nb_words;
 	int		i;
@@ -31,7 +31,7 @@ int	count_words(char *str, char c)
 	return (nb_words);
 }
 
-char	*ft_strncpy(char *dest, char *src, int n)
+static char	*ft_strncpy(char *dest, char *src, int n)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ char	*ft_strncpy(char *dest, char *src, int n)
 	return (dest);
 }
 
-char	**fill_resulting_array(char **result_array, char *str, char c)
+static char	**fill_resulting_array(char **result_array, char *str, char c)
 {
 	int	i;
 	int	wstart;

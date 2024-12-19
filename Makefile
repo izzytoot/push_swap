@@ -6,24 +6,20 @@
 #    By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 13:30:18 by icunha-t          #+#    #+#              #
-#    Updated: 2024/12/19 11:59:18 by icunha-t         ###   ########.fr        #
+#    Updated: 2024/12/19 17:12:59 by icunha-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #==============================================================================#
 #                                NAMES & PATHS                                 #
 #==============================================================================#
-NAME = ../libft.a 
+NAME = push_swap.a 
 
-HEADER_PATH = ./libft.h
-BASIC_PATH = ./basic
-PRINTF_PATH = ./printf
+HEADER_PATH = push_swap.h
 
-SRCS = $(addprefix $(BASIC_PATH)/, ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_memchr.c ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strdup.c ft_calloc.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c)
-PRINTF_SRCS = $(addprefix $(PRINTF_PATH)/, src/ft_printf.c src/ft_printchar.c src/ft_printstr.c src/ft_printint_nb.c src/ft_printint_u.c src/ft_printint_hex.c src/ft_printptr.c)
+SRCS = c_push.c c_reverse_rotate.c c_rotate.c c_swap.c error_handling.c mini_sort.c split.c stack_init.c utils.c
 
 OBJS = $(SRCS:.c=.o)
-PRINTF_OBJS = $(PRINTF_SRCS:.c=.o)
 #==============================================================================#
 #                            FLAGS & COMMANDS                                  #
 #==============================================================================#
@@ -48,24 +44,20 @@ RESET		= "\033[0m"
 #==============================================================================#
 #                                  RULES                                       #
 #==============================================================================#
-all: extra $(NAME)
+all: $(NAME)
 
-%.o: %.c $(HEADER_PATH)
+%.o: %.c 
 	$(C_COMP) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@echo $(GREEN) "$(NAME) was created successfully!" $(RESET)
 
-extra: $(OBJS) $(PRINTF_OBJS)
-	@$(AR) $(NAME) $(OBJS) $(PRINTF_OBJS)
-	@echo $(GREEN) "$(NAME) was created with extras successfully!" $(RESET)
-
 #==============================================================================#
 #                                  CLEAN RULES                                 #
 #==============================================================================#
 clean:
-	@$(RM) -f $(OBJS) $(PRINTF_OBJS)
+	@$(RM) -f $(OBJS)
 	@echo $(RED) "All .o files were deleted!" $(RESET)
 	
 fclean: clean
@@ -74,4 +66,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re extra
+.PHONY: all clean fclean re

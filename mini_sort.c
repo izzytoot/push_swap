@@ -6,13 +6,13 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:40:36 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/18 15:03:44 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:26:46 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_mini_sort(t_stack_node	**a)
+void	ft_mini_sort(t_stack_node **a)
 {
 	t_stack_node	*highest_nbr;
 
