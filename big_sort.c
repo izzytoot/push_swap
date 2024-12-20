@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:19:07 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/19 18:23:42 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/20 12:57:08 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_swap(int *a, int *b)
 	b = temp;
 }
 
-void	find_pivot(t_stack_node *a)
+float	find_pivot(t_stack_node *a)
 {
 	int	*buffer;
 	int	i;
@@ -30,7 +30,7 @@ void	find_pivot(t_stack_node *a)
 	float	median;
 	
 	size = ft_stack_len(a);
-	buffer = ft_stack_cpy(buffer, a, size);
+	buffer = ft_stack_cpy(a, size);
 	i = 0;
 	while(i++ < size - 1)
 	{

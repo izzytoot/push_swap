@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:28:38 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/19 18:16:05 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/20 13:06:55 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,22 +65,32 @@ int	ft_stack_len(t_stack_node *stack)
 	return (count);
 }
 
-int	*ft_stack_cpy(int *buffer, t_stack_node *stack, int size)
+int	*ft_stack_cpy(t_stack_node *stack, int size)
 {
 	t_stack_node *current;
+	int	*buffer;
 	int	i;
-	
-	current = stack;
-	if(!size)
-		return ;
+	if (!stack || size <= 0)
+		return (NULL);
 	buffer = malloc(sizeof(int) * size);
 	if(!buffer)
-		return ;
+	{
+		ft_printf("failed step malloc");
+		return (NULL);
+	}
+	current = stack;
 	i = 0;
 	while(i < size)
 	{
+		if (!current) 
+		{
+			free(buffer);
+            return (NULL);
+		}
+		ft_printf("Copying value: %d at index %d\n", current->value, i);
 		buffer[i] = current->value;
 		current = current->next;
+		i++;
 	}
 	return (buffer);
 }

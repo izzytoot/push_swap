@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2024/12/19 18:12:21 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/20 12:57:26 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void			ft_free_stack(t_stack_node **stack);
 
 //SORTING
 void			ft_mini_sort(t_stack_node	**a);
-void	ft_sorting_alg(t_stack_node **a, t_stack_node **b);
+void			ft_sorting_alg(t_stack_node **a, t_stack_node **b);
 
 //COMMANDS
 void			sa(t_stack_node **a, bool check);
@@ -65,6 +65,6 @@ t_stack_node	*find_last_node(t_stack_node *stack);
 bool			ft_is_stack_sorted(t_stack_node *stack);
 t_stack_node	*find_highest_node(t_stack_node *stack);
 int				ft_stack_len(t_stack_node *stack);
-void			ft_stack_cpy(int *buffer, t_stack_node *stack, int size);
+int				*ft_stack_cpy(t_stack_node *stack, int size);
 
 #endif
