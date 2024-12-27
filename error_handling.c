@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:55:22 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/18 13:41:35 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/27 15:35:22 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	ft_error_handling(char *str)
 	i = 0;
 	if (!(str[i] == '+' || str[i] == '-' || (str[i] >= '0' && str[i] <= '9')))
 		return (1);
-	if ((str[i] == '+' || str[i] == '-')
-		&& (!(str[i++] >= '0' && str[i++] <= '9')))
-		return (1);
-	while (str[++i])
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (1);
+		i++;
 	}
 	return (0);
 }

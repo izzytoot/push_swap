@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2024/12/20 12:57:26 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/27 16:44:01 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 typedef struct s_stack_node
 {
 	int					value;
-//	int					index;
-//	int					cost;
-//	bool				above_median;
-//	bool				cheapest;
-//	struct s_stack_node	*target_node;
+	int					index;
+	int					cost;
+	bool				above_median;
+	bool				cheapest;
+	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }	t_stack_node;

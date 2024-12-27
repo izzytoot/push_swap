@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 10:42:21 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/20 13:07:47 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/27 17:15:45 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,57 @@ static void	ft_swap(int *a, int *b)
 	*b = temp;
 }
 
-float	find_pivot(t_stack_node *a)
+int	find_pivot(t_stack_node *a)
 {
 	int	*buffer;
-	int	i;
 	int	size;
-	int	j;
-	float	median;
+	int	pivot;
+	int	first;
+	int	mid;
+	int	last;
 	
 	size = ft_stack_len(a);
 	buffer = ft_stack_cpy(a, size);
-	i = 0;
-	while(i++ < size - 1)
-	{
-		j = 0;
-		while(j++ < size - i - 1)
-		{
-			if(buffer[j] > buffer[j + 1])
-				ft_swap(&buffer[j], &buffer[j + 1]);
-		}
-	}
-	if (size % 2 == 0)
-		median = (buffer[size/2 - 1] + buffer[size / 2]) / 2;
+	if (!buffer)
+		return (0);
+	first = buffer[0];
+	mid = buffer[size / 2];
+	last = buffer[size - 1];
+	if ((first > mid) != (first > last))
+		pivot = first;
+	else if ((mid > first) != (mid > last))
+		pivot = mid;
 	else
-		median = buffer[size / 2];
+		pivot = last;
+	free (buffer);
+	return (pivot);
+}
+
+void	part_buffer(int pivot, t_stack_node *a)
+{
+	int	*buffer;
+	int	size;
+	int	first;
+	int	last;
+	
+	size = ft_stack_len(a);
+	buffer = ft_stack_cpy(a, size);
+	if (!buffer)
+		return ;
+	first = 0;
+	last = size - 1;
+	while (first < last) 
+	{
+        while (buffer[first] < pivot && first < last)
+            first++;
+        while (buffer[last] >= pivot && first < last)
+            last--;
+        if (first < last)
+            ft_swap(&buffer[first], &buffer[last]);
+    }
+	if (pivot != buffer[last])
+		ft_swap(&buffer[last], &buffer[size - 1]);
 	free(buffer);
-	return(median);	
 }
 
 void	print_stack(t_stack_node *stack, char *name)
@@ -59,61 +84,23 @@ void	print_stack(t_stack_node *stack, char *name)
 	}
 	ft_printf("\n");
 }
-/*
-int	main (void)
-{
-	t_stack_node	*a;
-	t_stack_node	node1 = {1, NULL, NULL};
-	t_stack_node	node2 = {7, &node1, NULL};
-	t_stack_node	node3 = {8, &node2, NULL};
-	t_stack_node	node4 = {10, &node3, NULL};
-	t_stack_node	node5 = {-5, &node4, NULL};
-	node1.prev = &node2;
-	node2.prev = &node3;
-	node3.prev = &node4;
-	node4.prev = &node5;
-	a = &node5;
-	float median = find_pivot(a);
-	print_stack(a, "A");
-	ft_printf("median is: %f\n", median);
-}
-*/
 
-int	main (void)
+int	main(int ac, char **av)
 {
 	t_stack_node	*a;
-	t_stack_node	node1 = {1, NULL, NULL};
-	t_stack_node	node2 = {7, &node1, NULL};
-	t_stack_node	node3 = {8, &node2, NULL};
-	t_stack_node	node4 = {10, &node3, NULL};
-	t_stack_node	node5 = {-5, &node4, NULL};
-	node1.prev = &node2;
-	node2.prev = &node3;
-	node3.prev = &node4;
-	node4.prev = &node5;
-	a = &node5;
-	
-	int	size = ft_stack_len(a);
-	ft_printf("Stack size: %d\n", size);
-	int	*buffer;
-	buffer = malloc(sizeof(int) * size);
-	if (!buffer) 
-	{
-		ft_printf("Failed to malloc stack in main \n");
-        return 1;
-	}
-	buffer = ft_stack_cpy(a, size);
-	if (!buffer) 
-	{
-		ft_printf("Failed to copy stack\n");
-        return 1;
-	}
-	int	i = 0;
-	while (i < size)
-	{
-		ft_printf("%d ", buffer[i]);
-		i++;
-	}
-	free(buffer);
-	return(0);
+	t_stack_node	*b;
+
+	a = NULL;
+	b = NULL;
+	if (ac == 1 || (ac == 2 && !av[1][0]))
+		return (1);
+	if (ac == 2)
+		av = split(av[1], ' ');
+	ft_stack_init(&a, av + (ac == 2 ? 0 : 1));
+	print_stack(a, "A");
+	int pivot = find_pivot(a);
+	ft_printf("pivot is: %d\n", pivot);
+	part_buffer(pivot, a);
+	ft_free_stack(&a);
+	return (0);
 }
