@@ -6,49 +6,11 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:19:07 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/20 12:57:08 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/28 18:40:54 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	ft_swap(int *a, int *b)
-{
-	int	temp;
-
-	temp = *a;
-	*a = *b;
-	b = temp;
-}
-
-float	find_pivot(t_stack_node *a)
-{
-	int	*buffer;
-	int	i;
-	int	size;
-	int	j;
-	float	median;
-	
-	size = ft_stack_len(a);
-	buffer = ft_stack_cpy(a, size);
-	i = 0;
-	while(i++ < size - 1)
-	{
-		j = 0;
-		while(j++ < size - i - 1)
-		{
-			if(buffer[j] > buffer[j + 1])
-				ft_swap(buffer[j], buffer[j + 1]);
-		}
-	}
-	if (size % 2 == 0)
-		median = (buffer[size/2 - 1] + buffer[size / 2]) / 2;
-	else
-		median = buffer[size / 2];
-	free(buffer);
-	return(median);	
-}
-
 
 void	ft_sorting_alg(t_stack_node **a, t_stack_node **b)
 {

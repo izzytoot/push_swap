@@ -6,7 +6,7 @@
 #    By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 13:30:18 by icunha-t          #+#    #+#              #
-#    Updated: 2024/12/19 17:12:59 by icunha-t         ###   ########.fr        #
+#    Updated: 2024/12/28 18:59:55 by icunha-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = push_swap.a
 
 HEADER_PATH = push_swap.h
 
-SRCS = c_push.c c_reverse_rotate.c c_rotate.c c_swap.c error_handling.c mini_sort.c split.c stack_init.c utils.c
+SRCS = c_push.c c_reverse_rotate.c c_rotate.c c_swap.c error_handling.c mini_sort.c split.c stack_init.c list_utils.c pivot_and_partitioning.c
 
 OBJS = $(SRCS:.c=.o)
 #==============================================================================#

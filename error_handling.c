@@ -6,13 +6,13 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:55:22 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/27 15:35:22 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/28 19:22:53 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_error_handling(char *str)
+int	ft_error_char(char *str)
 {
 	int	i;
 
@@ -26,6 +26,19 @@ int	ft_error_handling(char *str)
 		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (1);
 		i++;
+	}
+	return (0);
+}
+
+int	ft_error_repeat(t_stack_node *stack, int nbr)
+{
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		if (stack->value == nbr)
+			return (1);
+		stack = stack->next;
 	}
 	return (0);
 }

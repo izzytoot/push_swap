@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:46:54 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/27 16:22:23 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/28 19:25:09 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static int	count_words(char *str, char c)
 	i = 0;
 	while (str[i])
 	{
-		while(str[i] == c)
+		while (str[i] == c)
 			i++;
 		if (str[i])
 		{
 			nb_words++;
 			while (str[i] != c && str[i])
 				i++;
-		}	
+		}
 	}
 	return (nb_words);
 }
@@ -49,7 +49,7 @@ static char	*ft_strncpy(char *dest, char *src, int n)
 
 static char	**free_result_array(char **result_array, int word)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	while (i < word)
@@ -57,15 +57,15 @@ static char	**free_result_array(char **result_array, int word)
 		free(result_array[i]);
 		i++;
 	}
-    free(result_array);
-    return (NULL);
+	free(result_array);
+	return (NULL);
 }
 
 static char	**fill_resulting_array(char **result_array, char *str, char c)
 {
-	int	i;
-	int	wstart;
-	int	wend;
+	int			i;
+	int			wstart;
+	int			wend;
 	static int	word;
 
 	i = 0;
@@ -82,7 +82,7 @@ static char	**fill_resulting_array(char **result_array, char *str, char c)
 		{
 			result_array[word] = malloc(sizeof(char) * ((wend - wstart) + 1));
 			if (!result_array [word])
-				return free_result_array(result_array, word);
+				return (free_result_array(result_array, word));
 			ft_strncpy(result_array[word++], &str[wstart], (wend - wstart));
 		}
 	}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:28:38 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/27 13:22:07 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/28 19:32:47 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,23 @@ int	ft_stack_len(t_stack_node *stack)
 
 int	*ft_stack_cpy(t_stack_node *stack, int size)
 {
-	t_stack_node *current;
-	int	*buffer;
-	int	i;
+	t_stack_node	*current;
+	int				*buffer;
+	int				i;
+
 	if (!stack || size <= 0)
 		return (NULL);
-	buffer = malloc(sizeof(int) * size);
-	if(!buffer)
+	buffer = malloc (sizeof(int) * size);
+	if (!buffer)
 		return (NULL);
 	current = stack;
 	i = 0;
-	while(i < size)
+	while (i < size)
 	{
-		if (!current) 
+		if (!current)
 		{
 			free(buffer);
-            return (NULL);
+			return (NULL);
 		}
 		buffer[i] = current->value;
 		current = current->next;

@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:52:24 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/19 16:35:09 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/28 19:20:32 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,12 @@ void	ft_stack_init(t_stack_node **stack, char **av)
 	i = 0;
 	while (av[i])
 	{
-		if (ft_error_handling(av[i]))
-		{
-			ft_printf("Error: Invalid input detected -> %s\n", av[i]);
+		if (ft_error_char(av[i]))
 			ft_free_errors(stack);
-		}
 		nbr = ft_atol(av[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
+			ft_free_errors(stack);
+		if (ft_error_repeat(*stack, (int)nbr))
 			ft_free_errors(stack);
 		ft_append_node(stack, (int)nbr);
 		i++;
