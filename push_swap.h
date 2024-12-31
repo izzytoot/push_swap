@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2024/12/28 20:03:23 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/31 16:00:34 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,8 @@ bool			ft_is_stack_sorted(t_stack_node *stack);
 t_stack_node	*find_highest_node(t_stack_node *stack);
 int				ft_stack_len(t_stack_node *stack);
 int				*ft_stack_cpy(t_stack_node *stack, int size);
+
+
+void	print_stack(t_stack_node *stack, char *name);
 
 #endif

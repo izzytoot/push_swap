@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:28:38 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/28 19:32:47 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/31 16:00:19 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,15 @@ int	*ft_stack_cpy(t_stack_node *stack, int size)
 		i++;
 	}
 	return (buffer);
+}
+
+void	print_stack(t_stack_node *stack, char *name)
+{
+	ft_printf("Stack %s:\n", name);
+	while (stack)
+	{
+		ft_printf("%d ", stack->value);
+		stack = stack->next;
+	}
+	ft_printf("\n");
 }

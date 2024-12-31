@@ -3,25 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2024/12/28 21:22:56 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/31 16:00:02 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_stack_node *stack, char *name)
-{
-	ft_printf("Stack %s:\n", name);
-	while (stack)
-	{
-		ft_printf("%d ", stack->value);
-		stack = stack->next;
-	}
-	ft_printf("\n");
-}
 
 int	main(int ac, char **av)
 {
@@ -35,12 +24,12 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		av = split(av[1], ' ');
 	ft_stack_init(&a, av + (ac != 2));
-	ft_printf("Initial");
+	ft_printf("Initial ");
 	print_stack(a, "A");
 	int pivot = ft_find_pivot(a);
 	ft_printf("Pivot is %d\n", pivot);
 	ft_part_stack(a);
-	ft_printf("Changed");
+	ft_printf("Changed ");
 	print_stack(a, "A");
 	return (0);
 }

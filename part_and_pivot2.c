@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   part_and_pivot2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 18:36:00 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/28 21:27:45 by icunha-t         ###   ########.fr       */
+/*   Updated: 2024/12/31 12:18:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "push_swap.h"
 
 static void	ft_swap(int *a, int *b)
@@ -117,3 +118,20 @@ void	ft_part_stack(t_stack_node *a)
 	if (last && last->next)
 			ft_swap(&last->value, &first->value);
 }
+
+static void	ft_pos_pivot(t_stack_node *a, int pivot)
+{
+	t_stack_node	*current;
+
+	current = a;
+	while (a)
+	{
+		if (a->value == pivot)
+		{
+			ft_swap (current, current->next);
+			break ;
+		}
+		a = a->next;
+	}
+}
+*/
