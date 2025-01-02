@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2024/12/31 16:00:34 by root             ###   ########.fr       */
+/*   Updated: 2025/01/02 18:33:54 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_stack_node
 	int					value;
 	int					index;
 	int					cost;
-	bool				above_median;
 	bool				cheapest;
 	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
@@ -46,7 +45,7 @@ void			ft_free_stack(t_stack_node **stack);
 
 // PARTITIONING
 int				ft_find_pivot(t_stack_node *a);
-void			ft_part_stack(t_stack_node *a);
+void			ft_part_stack(t_stack_node **a);
 
 //SORTING
 void			ft_mini_sort(t_stack_node	**a);
@@ -71,8 +70,5 @@ bool			ft_is_stack_sorted(t_stack_node *stack);
 t_stack_node	*find_highest_node(t_stack_node *stack);
 int				ft_stack_len(t_stack_node *stack);
 int				*ft_stack_cpy(t_stack_node *stack, int size);
-
-
-void	print_stack(t_stack_node *stack, char *name);
 
 #endif

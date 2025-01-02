@@ -6,85 +6,47 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 18:36:00 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/31 16:54:11 by root             ###   ########.fr       */
+/*   Updated: 2025/01/02 18:53:02 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	ft_swap(t_stack_node *node1, t_stack_node *node2)
+/*
+static void	ft_move_to_beginning(t_stack_node **a, t_stack_node *prev_node, t_stack_node *current, t_stack_node *next_node)
 {
-	int	temp;
-
-	temp = node1->value;
-	node1->value = node2->value;
-	node2->value = temp;
+	prev_node->next = current->next;
+	current->next->prev = prev_node;
+	current->next = a;
+	*a = current;
+	*current = *next_node;
 }
-
-int	ft_find_pivot(t_stack_node *a)
+*/
+void	ft_part_stack(t_stack_node **a)
 {
-	int	pivot;
-	int	first;
-	int	mid;
-	int	last;
-
-	if (!a || !a->next || !a->next->next)
-		return a->value;
-	first = a->value;
-	mid = a->next->value;
-	last = a->next->next->value;
-	if ((first > mid) != (first > last))
-		pivot = first;
-	else if ((mid > first) != (mid > last))
-		pivot = mid;
-	else
-		pivot = last;
-	return (pivot);
-}
-
-void	ft_part_stack(t_stack_node *a)
-{
-	int	pivot;
+	t_stack_node	*pivot_node;
 	t_stack_node	*current;
-	t_stack_node	*last;
-	t_stack_node	*pivot_node;	
-	if (!a || !(a)->next)
+	t_stack_node	*prev_node;
+	t_stack_node	*next_node;
+
+	if (!a || !*a || !(*a)->next)
 		return ;
-	pivot = ft_find_pivot(a);
-	current = a;
-	last = find_last_node(a);
-	pivot_node = NULL;
-	while (current && last && current != last && current->prev != last)
+	pivot_node = *a;
+	current = (*a)->next;
+	prev_node = *a;
+	ft_printf("pivot is %d\n", pivot_node->value);
+	while (current->next != NULL)
 	{
-		while (current != last && current->value <= pivot)
-		{
-			if(current->value == pivot)
-			{	
-				ft_printf("0\n");
-				pivot_node = current;
-				ft_printf("pivot node is %d\n", pivot_node->value);
-			}
-			current = current->next;
-			if (current->value > pivot)
-				ft_swap(current, last);
-		}
-		while (current !=last && last->value > pivot)
-		{
-			ft_printf("1\n");
-			last = last->prev;
-		}
-		if (current != last && current->prev != last)
-		{
-			ft_printf("2\n");
-			ft_swap(current, last);
-			ft_printf("swapped %d with %d\n", current->value, last->value);
-			current = current->next;
-			last = last->prev;
-		}
+		next_node = current->next;
+		prev_node = current->prev;
+		if (current->value < pivot_node->value)
+	//		ft_move_to_beginning(*a, &prev_node, &current, &next_node);
+		else
+			current = next_node;
 	}
-	if (pivot_node && pivot_node->value < last->value)
+	if (current->value < pivot_node->value)
 	{
-		ft_printf("swapped pivot %d with %d\n", pivot_node->value, last->value);
-		ft_swap(pivot_node, last);
+		prev_node->next = NULL;
+		current->next = *a;
+		*a = current;
 	}
 }

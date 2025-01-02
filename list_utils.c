@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:28:38 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/31 16:00:19 by root             ###   ########.fr       */
+/*   Updated: 2025/01/02 18:33:38 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,15 +90,4 @@ int	*ft_stack_cpy(t_stack_node *stack, int size)
 		i++;
 	}
 	return (buffer);
-}
-
-void	print_stack(t_stack_node *stack, char *name)
-{
-	ft_printf("Stack %s:\n", name);
-	while (stack)
-	{
-		ft_printf("%d ", stack->value);
-		stack = stack->next;
-	}
-	ft_printf("\n");
 }
