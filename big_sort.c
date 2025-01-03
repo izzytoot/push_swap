@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:19:07 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/28 18:40:54 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/03 15:42:03 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 void	ft_sorting_alg(t_stack_node **a, t_stack_node **b)
 {
-	int	len_a;
-
-	len_a = ft_stack_len(*a);
-	if (len_a > 3 && !ft_is_stack_sorted(*a))
-		pb(b, a, false);
-	if (len_a > 3 && !ft_is_stack_sorted(*a))
-		pb(b, a, false);
-	while (len_a > 3 && !ft_is_stack_sorted(*a))
+	if (ft_stack_len(*a) <= 3)
+		{
+			ft_mini_sort(a);
+			return ;
+		}
+	else
 	{
-		init_nodes_a(*a, *b);
-		move_a_to_b(a, b);
+		ft_part_stack(a);
+		ft_printf("Partitioned ");
+		print_stack(*a, "A");
+		while (ft_stack_len(*a) > 3)
+			pb(b, a, false);
+		ft_printf("Left of ");
+		print_stack(*a, "A");
+		ft_mini_sort(a);
+		ft_printf("New ");
+		print_stack(*b, "B");
 	}
-	ft_mini_sort(a);
 }
