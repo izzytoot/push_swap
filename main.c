@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2025/01/02 18:33:43 by root             ###   ########.fr       */
+/*   Updated: 2025/01/03 14:54:19 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int ac, char **av)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
-
+	int	top_value;
 	a = NULL;
 	b = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
@@ -35,53 +35,58 @@ int	main(int ac, char **av)
 	if (ac == 2)
 		av = split(av[1], ' ');
 	ft_stack_init(&a, av + (ac != 2));
+	top_value = a->value;
 	ft_printf("Initial ");
 	print_stack(a, "A");
-	ft_part_stack(&a);
-	ft_printf("Changed ");
+	ft_printf("Initial ");
+	print_stack(b, "B");
+	ra(&a, false);
+	ft_printf("rotated ");
 	print_stack(a, "A");
+	rra(&a, false);
+	ft_printf("reverse rotated ");
+	print_stack(a, "A");
+	sa(&a, false);
+	ft_printf("swaped ");
+	print_stack(a, "A");
+	while(a)
+	{
+		pb(&b, &a, false);
+	}
+	ft_printf("pushed from a to b ");
+	print_stack(b, "B");
+	rb(&b, false);
+	ft_printf("rotated ");
+	print_stack(b, "B");
+	rrb(&b, false);
+	ft_printf("reverse rotated ");
+	print_stack(b, "B");
+	sb(&b, false);
+	ft_printf("swaped ");
+	print_stack(b, "B");
+	while(b)
+	{
+		pa(&a, &b, false);
+	}
+	ft_printf("pushed from b to a ");
+	print_stack(a, "A");
+	pb(&b, &a, false);
+	pb(&b, &a, false);
+	ft_printf("new ");
+	print_stack(a, "A");
+	ft_printf("new ");
+	print_stack(b, "B");
+	rr (&a, &b, false);
+	ft_printf("double rev ");
+	print_stack(a, "A");
+	print_stack(b, "B");
+	rrr (&a, &b, false);
+	ft_printf("double rr ");
+	print_stack(a, "A");
+	print_stack(b, "B");
+	ss (&a, &b, false);
+	ft_printf("double swap ");
+	print_stack(a, "A");
+	print_stack(b, "B");
 	return (0);
 }
-/*
-if (!stack_sorted(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			mini_sort(&a);
-		else
-			ft_sorting_alg(&a, &b);
-	}
-
-void	print_stack(t_stack_node *stack, char *name)
-{
-	ft_printf("Stack %s:\n", name);
-	while (stack)
-	{
-		ft_printf("%d ", stack->value);
-		stack = stack->next;
-	}
-	ft_printf("\n");
-}
-
-int	main(int ac, char **av)
-{
-	t_stack_node	*a;
-	t_stack_node	*b;
-
-	a = NULL;
-	b = NULL;
-	if (ac == 1 || (ac == 2 && !av[1][0]))
-		return (1);
-	if (ac == 2)
-		av = split(av[1], ' ');
-	ft_stack_init(&a, av + (ac != 2));
-	print_stack(a, "A");
-	int pivot = ft_find_pivot(a);
-	ft_printf("pivot is: %d\n", pivot);
-	ft_printf("new Stack A:\n");
-	ft_part_buffer(a, buffer, pivot);
-	ft_free_stack(&a);
-	return (0);
-}
-*/
