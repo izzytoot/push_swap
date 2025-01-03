@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2025/01/03 15:47:48 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/03 18:55:43 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int ac, char **av)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
+
 	a = NULL;
 	b = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))

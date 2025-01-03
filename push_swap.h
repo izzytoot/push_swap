@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2025/01/03 15:38:38 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/03 18:55:29 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int				ft_find_pivot(t_stack_node *a);
 void			ft_part_stack(t_stack_node **a);
 
 //SORTING
-void			ft_mini_sort(t_stack_node	**a);
+void			ft_mini_sort_3(t_stack_node	**a);
+void			ft_mini_sort_5(t_stack_node **a, t_stack_node **b);
 void			ft_sorting_alg(t_stack_node **a, t_stack_node **b);
 
 //COMMANDS
@@ -70,7 +71,9 @@ bool			ft_is_stack_sorted(t_stack_node *stack);
 t_stack_node	*find_highest_node(t_stack_node *stack);
 int				ft_stack_len(t_stack_node *stack);
 int				*ft_stack_cpy(t_stack_node *stack, int size);
+t_stack_node	*find_lowest_node(t_stack_node *stack);
+t_stack_node	*find_second_lowest_node(t_stack_node *stack);
 
-void	print_stack(t_stack_node *stack, char *name);
+void			print_stack(t_stack_node *stack, char *name);
 
 #endif
