@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:47:35 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/19 16:32:44 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/05 14:40:52 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static void	rotate(t_stack_node **stack)
 void	ra(t_stack_node **a, bool check)
 {
 	rotate(a);
-	if (!check)
+	if (check)
 		ft_printf("ra\n");
 }
 
 void	rb(t_stack_node **b, bool check)
 {
 	rotate(b);
-	if (!check)
+	if (check)
 		ft_printf("rb\n");
 }
 
@@ -44,6 +44,6 @@ void	rr(t_stack_node **a, t_stack_node **b, bool check)
 {
 	rotate(a);
 	rotate(b);
-	if (!check)
+	if (check)
 		ft_printf("rr\n");
 }

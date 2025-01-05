@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:22:23 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/19 16:32:51 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/05 14:41:16 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ static void	swap(t_stack_node **new_head)
 void	sa(t_stack_node **a, bool check)
 {
 	swap(a);
-	if (!check)
+	if (check)
 		ft_printf("sa\n");
 }
 
 void	sb(t_stack_node **b, bool check)
 {
 	swap(b);
-	if (!check)
+	if (check)
 		ft_printf("sb\n");
 }
 
@@ -43,6 +43,6 @@ void	ss(t_stack_node **a, t_stack_node **b, bool check)
 {
 	swap(a);
 	swap(b);
-	if (!check)
+	if (check)
 		ft_printf("ss\n");
 }

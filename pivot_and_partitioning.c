@@ -6,47 +6,86 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 18:36:00 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/03 13:42:30 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:49:25 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_move_to_beginning(t_stack_node **a, t_stack_node **prev_node,
-		t_stack_node **current, t_stack_node **next_node)
+static int	ft_find_pivot(t_stack_node **a)
 {
-	(*prev_node)->next = (*current)->next;
-	(*current)->next->prev = *prev_node;
-	(*current)->next = *a;
-	*a = *current;
-	*current = *next_node;
+	t_stack_node	*highest_node;
+	t_stack_node	*lowest_node;
+	int	pivot;
+	
+	highest_node = find_highest_node(*a);
+	//ft_printf("highest value is %d\n", highest_node->value);
+	lowest_node = find_lowest_node(*a);
+	//ft_printf("lowest value is %d\n", lowest_node->value);
+	pivot = (highest_node->value + lowest_node->value) / 2;
+	//ft_printf("pivot is %d\n", pivot);
+	return (pivot);
 }
 
-void	ft_part_stack(t_stack_node **a)
+void	ft_part_stack(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*pivot_node;
+	int	pivot;
+	int	size;
+	int	i;
 	t_stack_node	*current;
-	t_stack_node	*prev_node;
-	t_stack_node	*next_node;
-
-	if (!a || !*a || !(*a)->next)
+	
+	pivot = ft_find_pivot(a);
+	size = ft_stack_len(*a);
+	i = 0;
+	current = *a;
+	if(ft_stack_len(*a) < 4)
 		return ;
-	pivot_node = *a;
-	current = (*a)->next;
-	while (current->next)
+	while(i < size)
 	{
-		next_node = current->next;
-		prev_node = current->prev;
-		if (current->value < pivot_node->value)
-			ft_move_to_beginning(a, &prev_node, &current, &next_node);
+		if(current->value <= pivot)
+		{
+				while((*a)->value != current->value)
+					ra(a, true);
+				pb(b, a, true);
+				current = *a;
+		}
 		else
-			current = next_node;
+		{
+			ra(a, true);
+			current = *a;
+		}
+		i++;
 	}
-	prev_node = current->prev;
-	if (current->value < pivot_node->value)
+	ft_part_stack(a, b);
+}
+
+/*
+
+void	ft_part_stack(t_stack_node **a, t_stack_node **b)
+{
+	int	pivot;
+	int	size;
+	t_stack_node	*current;
+	
+	pivot = ft_find_pivot(a);
+	size = ft_stack_len(*a);
+	current = *a;
+	while(size > 0)
 	{
-		prev_node->next = NULL;
-		current->next = *a;
-		*a = current;
+		if(current->value <= pivot)
+		{
+				while((*a)->value != current->value)
+					ra(a, true);
+				pb(b, a, true);
+				current = *a;
+				size--;
+		}
+		else
+		{
+			ra(a, true);
+			current = *a;
+			size--;
+		}
 	}
 }
+*/

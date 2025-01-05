@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:28:39 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/19 16:32:34 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/05 14:40:21 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ static void	push(t_stack_node **dest, t_stack_node **src)
 void	pa(t_stack_node **a, t_stack_node **b, bool check)
 {
 	push(a, b);
-	if (!check)
+	if (check)
 		ft_printf("pa\n");
 }
 
 void	pb(t_stack_node **b, t_stack_node **a, bool check)
 {
 	push(b, a);
-	if (!check)
+	if (check)
 		ft_printf("pb\n");
 }

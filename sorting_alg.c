@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:19:07 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/03 18:54:28 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:33:39 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_sorting_alg(t_stack_node **a, t_stack_node **b)
 {
 	if (ft_stack_len(*a) == 2)
 	{
-		sa(a, false);
+		sa(a, true);
 		return ;
 	}
 	if (ft_stack_len(*a) == 3)
@@ -31,15 +31,18 @@ void	ft_sorting_alg(t_stack_node **a, t_stack_node **b)
 	}
 	else
 	{
-		ft_part_stack(a);
-		ft_printf("Partitioned ");
-		print_stack(*a, "A");
-		while (ft_stack_len(*a) > 3)
-			pb(b, a, false);
-		ft_printf("Left of ");
-		print_stack(*a, "A");
+		ft_part_stack(a, b);
 		ft_mini_sort_3(a);
-		ft_printf("New ");
-		print_stack(*b, "B");
 	}
+	/*
+	else
+		ft_big_sort(a, b);
+	*/		
 }
+/*
+void	ft_big_sort(t_stack_node **a, t_stack_node **b)
+{
+	ft_part_stack(a, b);
+	ft_mini_sort_3(a);
+}
+*/

@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2025/01/03 18:55:29 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:08:26 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ void			ft_free_errors(t_stack_node **a);
 void			ft_free_stack(t_stack_node **stack);
 
 // PARTITIONING
-int				ft_find_pivot(t_stack_node *a);
-void			ft_part_stack(t_stack_node **a);
+void			ft_part_stack(t_stack_node **a, t_stack_node **b);
 
 //SORTING
-void			ft_mini_sort_3(t_stack_node	**a);
-void			ft_mini_sort_5(t_stack_node **a, t_stack_node **b);
 void			ft_sorting_alg(t_stack_node **a, t_stack_node **b);
+void			ft_mini_sort_3(t_stack_node	**stack);
+void			ft_mini_sort_5(t_stack_node **stack_one, t_stack_node **stack_two);
+void			ft_big_sort(t_stack_node **a, t_stack_node **b);
 
 //COMMANDS
 void			sa(t_stack_node **a, bool check);
