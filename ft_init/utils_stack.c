@@ -6,11 +6,11 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:28:38 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/03 18:53:29 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:06:43 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_stack_node	*find_last_node(t_stack_node *stack)
 {

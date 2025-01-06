@@ -6,11 +6,11 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:22:23 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/05 14:41:16 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:06:24 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	swap(t_stack_node **new_head)
 {

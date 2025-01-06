@@ -6,11 +6,11 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:46:54 by icunha-t          #+#    #+#             */
-/*   Updated: 2024/12/28 19:25:09 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:06:36 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	count_words(char *str, char c)
 {

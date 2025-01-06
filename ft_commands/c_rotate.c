@@ -6,11 +6,11 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 15:47:35 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/05 14:40:52 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:06:18 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	rotate(t_stack_node **stack)
 {

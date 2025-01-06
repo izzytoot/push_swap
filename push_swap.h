@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2025/01/05 16:08:26 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:52:12 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
+static int	chunck_position = -1;
+
 //ARGUMENT INITIAL SORTING OUT
 char			**split(char *str, char c);
 void			ft_stack_init(t_stack_node **a, char **av);
@@ -43,14 +45,12 @@ int				ft_error_repeat(t_stack_node *stack, int n);
 void			ft_free_errors(t_stack_node **a);
 void			ft_free_stack(t_stack_node **stack);
 
-// PARTITIONING
-void			ft_part_stack(t_stack_node **a, t_stack_node **b);
-
 //SORTING
 void			ft_sorting_alg(t_stack_node **a, t_stack_node **b);
 void			ft_mini_sort_3(t_stack_node	**stack);
-void			ft_mini_sort_5(t_stack_node **stack_one, t_stack_node **stack_two);
+void			ft_mini_sort_5(t_stack_node **stack_1, t_stack_node **stack_2);
 void			ft_big_sort(t_stack_node **a, t_stack_node **b);
+void			ft_part_stack(t_stack_node **a, t_stack_node **b);
 
 //COMMANDS
 void			sa(t_stack_node **a, bool check);

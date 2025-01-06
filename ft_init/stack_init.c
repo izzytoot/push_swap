@@ -6,11 +6,11 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:52:24 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/03 15:15:52 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:06:40 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static long	ft_atol(const char *str)
 {
@@ -47,7 +47,6 @@ void	ft_append_node(t_stack_node **stack, int nbr)
 		return ;
 	new_node->next = NULL;
 	new_node->value = nbr;
-	//new_node->cheapest = 0;
 	if (!(*stack))
 	{
 		*stack = new_node;

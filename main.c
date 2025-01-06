@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2025/01/05 16:35:18 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:54:17 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ int	main(int ac, char **av)
 	ft_free_stack(&b);
 	return (0);
 }
-
 */
-//COMMENTED VERSION
 
+//COMMENTED VERSION
 void	print_stack(t_stack_node *stack, char *name)
 {
 	ft_printf("Stack %s:\n", name);
