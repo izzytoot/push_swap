@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:19:07 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/06 14:56:25 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:33:37 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	ft_big_sort(t_stack_node **a, t_stack_node **b)
 	ft_part_stack(a, b);
 	if (!ft_is_stack_sorted(*a))
 		ft_mini_sort_3(a);
-//	while (ft_stack_len(*b) > 3)
-//	{
-	ft_mini_sort_5(b, a);
-/*
+	while (!(*b)->chunk_start)
+		pa(a, b, true);
+	/*	
+		ft_mini_sort_5(b, a);
 		while(i <= 5)
 		{
 			pa(a, b, true);
@@ -63,6 +63,6 @@ void	ft_big_sort(t_stack_node **a, t_stack_node **b)
 		while(ft_stack_len(*b) > 0)
 			pa(a, b, true);	
 	}
-*/
+	*/
 }
 
