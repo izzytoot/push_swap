@@ -6,7 +6,7 @@
 #    By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 13:30:18 by icunha-t          #+#    #+#              #
-#    Updated: 2025/01/07 16:50:56 by icunha-t         ###   ########.fr        #
+#    Updated: 2025/01/08 11:47:04 by icunha-t         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS_INIT = $(addprefix $(INIT_PATH)/, error_handling.c split.c stack_init.c uti
 
 SRCS_COMMANDS = $(addprefix $(COMMANDS_PATH)/, c_push.c c_reverse_rotate.c c_rotate.c c_swap.c)
 
-SRCS_SORTING = $(addprefix $(SORTING_PATH)/, costs.c mini_sort.c pivot_and_partitioning.c sorting_alg.c utils_sort.c)
+SRCS_SORTING = $(addprefix $(SORTING_PATH)/, prep_and_costs.c mini_sort.c pivot_and_partitioning.c sorting_alg.c utils_sort.c)
 
 EXEC_SRC = main.c
 

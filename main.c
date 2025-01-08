@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2025/01/07 17:44:39 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:55:09 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	main(int ac, char **av)
 	ft_free_stack(&b);
 	return (0);
 }
-
 
 //COMMENTED VERSION
 

@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:19:07 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/07 18:33:37 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:31:56 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,55 @@ void	ft_sorting_alg(t_stack_node **a, t_stack_node **b)
 		ft_big_sort(a, b);
 }
 
+void	print_chunk_end(t_stack_node *stack)
+{
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		if (stack->chunk_end)
+			ft_printf("chunk finishes on %d\n", stack->value);
+		stack = stack->next;
+	}
+}
+
 void	ft_big_sort(t_stack_node **a, t_stack_node **b)
 {
 	int	i;
-	
+
 	i = 0;
 	ft_part_stack(a, b);
 	if (!ft_is_stack_sorted(*a))
 		ft_mini_sort_3(a);
-	while (!(*b)->chunk_start)
-		pa(a, b, true);
-	/*	
+	ft_printf("after part ");
+	print_stack(*a, "A");
+	ft_printf("after part ");
+	print_stack(*b, "B");
+	print_chunk_end(*b);
+	while(*b)
+	{
+		(*b)->chunk_end = false;
+		while (!(*b)->chunk_end)
+		{
+			ft_prep_for_comeback(*a, *b);
+			ft_prep_for_push(a, b, 'a');
+			pa(a, b, true);
+			if ((*b)->next)
+				*b = (*b)->next;
+			else
+			{
+				*b = NULL;
+				break ;
+			}
+		}
+		ft_printf("after comeback ");
+		print_stack(*a, "A");
+		ft_printf("after comeback ");
+		print_stack(*b, "B");
+	}
+/*
+	}
+	
 		ft_mini_sort_5(b, a);
 		while(i <= 5)
 		{
@@ -65,4 +103,3 @@ void	ft_big_sort(t_stack_node **a, t_stack_node **b)
 	}
 	*/
 }
-

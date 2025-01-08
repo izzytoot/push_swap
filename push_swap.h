@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2025/01/07 17:48:36 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/08 16:05:51 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,14 @@ typedef struct s_stack_node
 {
 	int					value;
 	int					cost;
-	bool				chunk_start;
+	int					position;
+	bool				above_median_len;
+	bool				cheapest;
 	bool				chunk_end;
 	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }	t_stack_node;
-
-/* ************************************************************************** */
-/*                                  VARIABLES                                 */
-/* ************************************************************************** */
-static int	chunck_position = -1;
 
 /* ************************************************************************** */
 /*                                  FUNCTIONS                                 */
@@ -85,12 +82,11 @@ int				ft_stack_len(t_stack_node *stack);
 /********************************* FT_SORTING ******************************/
 
 // costs.c
-void		ft_find_best_insert(t_stack_node **a, t_stack_node **b);
-int			ft_find_cheapest(t_stack_node **a, t_stack_node **b, int start, int current_len);
-int			ft_calculate_moves(t_stack_node **a, t_stack_node **b, int	current);
-int			ft_find_distance(t_stack_node **stack, int	nbr);
-int			ft_find_next(t_stack_node **stack, int nbr);
-int			*ft_which_item(t_stack_node *stack, int i);
+void			ft_current_position(t_stack_node *stack);
+void			ft_find_target_for_b(t_stack_node *a, t_stack_node *b);
+void			ft_calc_moves(t_stack_node *stack_1, t_stack_node *stack_2);
+void			set_cheapest(t_stack_node *stack);
+void			ft_prep_for_comeback(t_stack_node *a, t_stack_node *b);
 
 // mini_sort.c
 void			ft_mini_sort_3(t_stack_node	**stack);
@@ -105,10 +101,10 @@ void			ft_big_sort(t_stack_node **a, t_stack_node **b);
 
 // utils_sort.c
 bool			ft_is_stack_sorted(t_stack_node *stack);
-int				ft_abs(int	n);
+t_stack_node	*ft_find_cheapest_node(t_stack_node *stack);
+void			ft_prep_for_push(t_stack_node **stack_1, t_stack_node **stack_2, char name_stack1);
 
 // OUTROS
-int				*ft_stack_cpy(t_stack_node *stack, int size);
 void			print_stack(t_stack_node *stack, char *name);
 
 #endif
