@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 16:52:24 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/06 11:06:40 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/10 11:33:33 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,19 @@ void	ft_stack_init(t_stack_node **stack, char **av)
 		ft_append_node(stack, (int)nbr);
 		i++;
 	}
+}
+
+void	free_split(char **array)
+{
+	int	i;
+
+	i = 0;
+	if (!array)
+		return ;
+	while (array[i])
+	{
+		free (array[i]);
+		i++;
+	}
+	free (array);
 }

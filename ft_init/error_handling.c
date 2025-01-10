@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 14:55:22 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/06 11:06:28 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:30:01 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,11 @@ void	ft_free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-void	ft_free_errors(t_stack_node **a)
+void	ft_free_errors(t_stack_node **stack)
 {
-	ft_free_stack(a);
+	if (!stack)
+		return ;
+	ft_free_stack(stack);
 	ft_printf("Error\n");
 	exit(1);
 }

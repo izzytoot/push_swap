@@ -6,7 +6,7 @@
 /*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:40:36 by icunha-t          #+#    #+#             */
-/*   Updated: 2025/01/08 10:46:48 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:53:32 by icunha-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_mini_sort_3(t_stack_node **stack)
 	t_stack_node	*highest_node;
 
 	highest_node = find_highest_node(*stack);
-	if (!(*stack)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
 	if (*stack == highest_node)
 		ra(stack, true);
@@ -36,11 +36,7 @@ void	ft_mini_sort_5(t_stack_node **stack_1, t_stack_node **stack_2)
 	lowest_node = find_lowest_node(*stack_1);
 	second_lowest_node = find_second_lowest_node (*stack_1);
 	i = 0;
-	while (*stack_1 != lowest_node)
-	{
-		ra(stack_1, true);
-		i++;
-	}
+	ft_lowest_on_top(stack_1);
 	pb(stack_2, stack_1, true);
 	while (*stack_1 != second_lowest_node)
 	{
