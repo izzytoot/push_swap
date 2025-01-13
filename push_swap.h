@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 15:28:31 by root              #+#    #+#             */
-/*   Updated: 2025/01/10 11:15:07 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:53:06 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,10 @@ int				ft_error_repeat(t_stack_node *stack, int n);
 void			ft_free_errors(t_stack_node **a);
 void			ft_free_stack(t_stack_node **stack);
 
-//split.c
-char			**split(char *str, char c);
-
 // stack_init.c
 void			ft_stack_init(t_stack_node **a, char **av);
 void			ft_append_node(t_stack_node **stack, int n);
-void			free_split(char **array);
+void			ft_free_split(char **array);
 
 // utils_stack.c
 t_stack_node	*find_last_node(t_stack_node *stack);

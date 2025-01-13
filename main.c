@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 13:07:36 by root              #+#    #+#             */
-/*   Updated: 2025/01/10 11:31:42 by icunha-t         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:54:27 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ int	main(int ac, char **av)
 		return (1);
 	if (ac == 2)
 	{
-		split_av = split(av[1], ' ');
+		
+		split_av = ft_split(av[1], ' ');
 		av = split_av;
 		ft_stack_init(&a, av);
-		free_split(split_av);
+		ft_free_split(split_av);
 	}
 	else
 		ft_stack_init(&a, av + 1);

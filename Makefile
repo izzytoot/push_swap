@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: icunha-t <icunha-t@student.42.fr>          +#+  +:+       +#+         #
+#    By: root <root@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 13:30:18 by icunha-t          #+#    #+#              #
-#    Updated: 2025/01/08 11:47:04 by icunha-t         ###   ########.fr        #
+#    Updated: 2025/01/13 12:18:45 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ COMMANDS_PATH = ./ft_commands
 
 SORTING_PATH = ./ft_sorting
 
-SRCS_INIT = $(addprefix $(INIT_PATH)/, error_handling.c split.c stack_init.c utils_stack.c)
+SRCS_INIT = $(addprefix $(INIT_PATH)/, error_handling.c stack_init.c utils_stack.c)
 
 SRCS_COMMANDS = $(addprefix $(COMMANDS_PATH)/, c_push.c c_reverse_rotate.c c_rotate.c c_swap.c)
 
