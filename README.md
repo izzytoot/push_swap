@@ -1,5 +1,7 @@
 # PUSH_SWAP
 
+https://github.com/user-attachments/assets/35b99ff9-4e11-4cb6-9d6c-f2dfa1ee1622
+
 ## 1.1. About
 This project aims to sort data on a stack, with a limited set of instructions, using the lowest possible number of moves.
 
