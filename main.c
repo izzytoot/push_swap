@@ -27,11 +27,11 @@ int	main(int ac, char **av)
 		
 		split_av = ft_split(av[1], ' ');
 		av = split_av;
-		ft_stack_init(&a, av);
+		ft_stack_init(&a, av, ac);
 		ft_free_split(split_av);
 	}
 	else
-		ft_stack_init(&a, av + 1);
+		ft_stack_init(&a, av + 1, ac);
 	if (!ft_is_stack_sorted(a))
 		ft_sorting_alg(&a, &b);
 	ft_free_stack(&a);
