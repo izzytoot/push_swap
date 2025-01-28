@@ -66,7 +66,7 @@ void			ft_free_errors(t_stack_node **a);
 void			ft_free_stack(t_stack_node **stack);
 
 // stack_init.c
-void			ft_stack_init(t_stack_node **a, char **av);
+void			ft_stack_init(t_stack_node **a, char **av, int ac);
 void			ft_append_node(t_stack_node **stack, int n);
 void			ft_free_split(char **array);
 
