@@ -69,12 +69,12 @@ void	ft_stack_init(t_stack_node **stack, char **av)
 	while (av[i])
 	{
 		if (ft_error_char(av[i]))
-			ft_free_errors(stack);
+			ft_free_errors(stack, av);
 		nbr = ft_atol(av[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-			ft_free_errors(stack);
+			ft_free_errors(stack, av);
 		if (ft_error_repeat(*stack, (int)nbr))
-			ft_free_errors(stack);
+			ft_free_errors(stack, av);
 		ft_append_node(stack, (int)nbr);
 		i++;
 	}
