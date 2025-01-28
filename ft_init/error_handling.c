@@ -68,6 +68,6 @@ void	ft_free_errors(t_stack_node **stack, char **array, int ac)
 	ft_free_stack(stack);
 	ft_printf("Error\n");
 	if (ac == 2)
-		free_split(array);
+		ft_free_split(array);
 	exit(1);
 }
