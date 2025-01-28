@@ -62,7 +62,7 @@ void			ss(t_stack_node **a, t_stack_node **b, bool print_check);
 // error_handling.c
 int				ft_error_char(char *str);
 int				ft_error_repeat(t_stack_node *stack, int n);
-void			ft_free_errors(t_stack_node **a);
+void			ft_free_errors(t_stack_node **stack, char **array, int ac);
 void			ft_free_stack(t_stack_node **stack);
 
 // stack_init.c
