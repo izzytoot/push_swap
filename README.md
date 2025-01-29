@@ -1,4 +1,4 @@
-# 💯 PUSH_SWAP
+# 🔂 PUSH_SWAP
 
 https://github.com/user-attachments/assets/35b99ff9-4e11-4cb6-9d6c-f2dfa1ee1622
 
